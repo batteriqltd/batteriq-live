@@ -1,0 +1,11 @@
+---
+# Runs when "Deploy HEAD Commit" is clicked in cPanel > Git Version Control.
+# Copies static files into public_html so the web server (LiteSpeed) serves
+# them directly instead of going through the Node.js app, then restarts the app.
+deployment:
+  tasks:
+    - /bin/mkdir -p /home1/batteriq/public_html/_next
+    - /bin/cp -R site/.next/static /home1/batteriq/public_html/_next/
+    - /bin/cp -R site/public/. /home1/batteriq/public_html/
+    - /bin/mkdir -p tmp
+    - /bin/touch tmp/restart.txt

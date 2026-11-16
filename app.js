@@ -13,6 +13,7 @@ const path = require('path')
 
 const envFiles = [
   path.join(__dirname, '..', 'batteriq-settings.env'),
+  path.join(__dirname, '..', 'batteriq-old.env'),
   path.join(__dirname, '..', 'batteriq', '.env'),
 ]
 

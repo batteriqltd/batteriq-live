@@ -1,0 +1,1 @@
+"use strict";exports.id=9064,exports.ids=[9064],exports.modules={99064:(e,s,t)=>{t.d(s,{createAdminClient:()=>o});var r=t(12814);function o(){return(0,r.eI)("https://ueagjjdbbukdkktviyrv.supabase.co",process.env.SUPABASE_SERVICE_ROLE_KEY,{auth:{autoRefreshToken:!1,persistSession:!1}})}}};

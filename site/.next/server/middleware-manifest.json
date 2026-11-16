@@ -1,0 +1,88 @@
+{
+  "version": 3,
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge-runtime-webpack.js",
+        "server/middleware.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/admin(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/admin/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/outreach-admin(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/outreach-admin/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/outreach-admin(.json)?[\\/#\\?]?$",
+          "originalSource": "/outreach-admin"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/api\\/admin(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/api/admin/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/api\\/orders(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/api/orders/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/api\\/orders(.json)?[\\/#\\?]?$",
+          "originalSource": "/api/orders"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/api\\/mpesa(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/api/mpesa/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/api\\/contact(.json)?[\\/#\\?]?$",
+          "originalSource": "/api/contact"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "fM5VXH2oeHbe6o-TMi7EZ",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "jpjvOCHdPc3HHYDdVLpX0svslVj5JgEJO77JjuqAUe0=",
+        "__NEXT_PREVIEW_MODE_ID": "50305cc4149d045e1b6868a14bc0c78a",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "dc73166063042bbe71b111c9402af4cb37dd75019f1886b6d5492415e4c4fc7e",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "d2b72a01d0696e0a9ca536aa8a7079c807937b3d053bfc5831aa346b443585ec"
+      }
+    }
+  },
+  "functions": {
+    "/api/products/[slug]/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/app/api/products/[slug]/route.js"
+      ],
+      "name": "app/api/products/[slug]/route",
+      "page": "/api/products/[slug]/route",
+      "matchers": [
+        {
+          "regexp": "^/api/products/(?<slug>[^/]+?)$",
+          "originalSource": "/api/products/[slug]"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "fM5VXH2oeHbe6o-TMi7EZ",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "jpjvOCHdPc3HHYDdVLpX0svslVj5JgEJO77JjuqAUe0=",
+        "__NEXT_PREVIEW_MODE_ID": "50305cc4149d045e1b6868a14bc0c78a",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "dc73166063042bbe71b111c9402af4cb37dd75019f1886b6d5492415e4c4fc7e",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "d2b72a01d0696e0a9ca536aa8a7079c807937b3d053bfc5831aa346b443585ec"
+      }
+    }
+  },
+  "sortedMiddleware": [
+    "/"
+  ]
+}

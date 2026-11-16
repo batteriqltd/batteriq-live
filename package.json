@@ -1,0 +1,10 @@
+{
+  "name": "batteriq-live",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prebuilt Batteriq site for cPanel. All dependencies are bundled in ./site — do not run npm install.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}

@@ -29,7 +29,19 @@ mkdir -p "$LIVE/tmp" "$LIVE/site" "$WEB/_next"
   # Restart: Passenger watches tmp/restart.txt; also stop the running process
   # so the next request is guaranteed to start the new build.
   touch "$LIVE/tmp/restart.txt"
-  pkill -f "Passenger NodeApp: $LIVE" && echo "old app process stopped" || echo "no running app process found (restart.txt will apply)"
+  ME="$(id -u)"
+  echo "--- my processes before restart:"
+  ps -u "$ME" -o pid,etime,args 2>/dev/null | cut -c1-150
+  # The app shows up as "lsnode:<app root>" under LiteSpeed or
+  # "Passenger NodeApp: <app root>" under Passenger. Stop whichever exists.
+  STOPPED=no
+  for PATTERN in "lsnode:.*batteriq-live" "Passenger NodeApp: .*batteriq-live" "node .*batteriq-live"; do
+    if pkill -u "$ME" -f "$PATTERN"; then echo "stopped process matching: $PATTERN"; STOPPED=yes; fi
+  done
+  [ "$STOPPED" = no ] && echo "no app process matched; relying on restart.txt"
+  sleep 2
+  echo "--- my processes after restart:"
+  ps -u "$ME" -o pid,etime,args 2>/dev/null | cut -c1-150
   echo "restart requested $(date)"
 
   # Static files for the web server. Old folders can carry odd permissions.

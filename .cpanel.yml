@@ -1,19 +1,6 @@
 ---
 # Runs when "Deploy HEAD Commit" is clicked in cPanel > Git Version Control
-# for the clone at ~/batteriq-build. The site itself runs from
-# ~/batteriq-live, which is NOT the clone: the running app rewrites cached
-# pages on disk, and that would leave a clone too "dirty" to update.
-#
-# 1. copies the app into the folder it runs from
-# 2. copies static files into public_html so the web server (LiteSpeed)
-#    serves them directly instead of going through the Node.js app
-# 3. restarts the Node.js app
+# for the clone at ~/batteriq-build. See deploy.sh for what it does.
 deployment:
   tasks:
-    - export LIVE=/home1/batteriq/batteriq-live
-    - export WEB=/home1/batteriq/public_html
-    - /bin/mkdir -p $LIVE/tmp $WEB/_next
-    - /bin/cp -R site app.js cron.sh package.json $LIVE/
-    - /bin/cp -R site/.next/static $WEB/_next/
-    - /bin/cp -R site/public/. $WEB/
-    - /bin/touch $LIVE/tmp/restart.txt
+    - /bin/sh ./deploy.sh

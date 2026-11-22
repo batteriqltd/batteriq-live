@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fbluetti\u002F[slug]","\u002Fcompare\u002F[pair]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

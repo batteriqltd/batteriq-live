@@ -1,1 +1,1 @@
-{"status":"Batteriq Health Check","timestamp":"2026-11-22T08:37:46.477Z","environment":{"supabaseUrl":"✅","supabaseKey":"✅","mpesaKey":"✅","mpesaEnv":"production","resendKey":"✅"},"database":"✅ Connected (542ms)"}
+{"status":"Batteriq Health Check","timestamp":"2026-11-22T08:57:37.109Z","environment":{"supabaseUrl":"✅","supabaseKey":"✅","mpesaKey":"✅","mpesaEnv":"production","resendKey":"✅"},"database":"✅ Connected (773ms)"}
